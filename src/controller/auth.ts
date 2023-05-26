@@ -26,11 +26,24 @@ export const signUp = async (req: Request, res: Response) => {
         email,
         username,
         password: hashedPassword
+      },
+      select: {
+        username: true,
+        id: true,
+        email: true,
+        emailVerified: true,
+        image: true,
+        accounts: true,
+        sessions: true
       }
     })
     res
       .status(201)
-      .json({ message: 'User created successfully', user: newUser })
+      .json({
+        result: true,
+        message: 'User created successfully',
+        user: newUser
+      })
       .end()
   } catch (err) {
     console.error(err)

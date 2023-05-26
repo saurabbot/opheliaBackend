@@ -9,7 +9,7 @@ import cors from 'cors'
 import { setupSwagger } from './swagger'
 
 const app: Express = express()
-const port = 3000
+const port = 4000
 app.use(
   cors({
     credentials: true
